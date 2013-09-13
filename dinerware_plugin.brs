@@ -288,7 +288,7 @@ Function newMenuItem(item as string, price as string, desc as string) as object
   return mi
 end Function
 
-ub updateUserVar(uv as object, targetVar as string, newValue as string)
+sub updateUserVar(uv as object, targetVar as string, newValue as string)
   if newValue=invalid
       print "updateUserVar: new value for ";targetVar;" is invalid"
       return
