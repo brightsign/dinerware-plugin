@@ -55,8 +55,6 @@ Function dinerware_process_event(event as Object)
 end Function
 
 
-s
-
 Function ParseDinerwareUDP(origMsg as Object, dw as object) as boolean
 
   retval = false
