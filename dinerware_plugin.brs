@@ -227,7 +227,8 @@ Function parseAllMenuReply(menu as string,dw as object)
 			next 'q'
 		next 'x'
 
-    n=getUserVar(m.dw.uv,"numPresentationMenuItems")
+    uv=m.dw.uv
+    n=getUserVar(uv,"numPresentationMenuItems")
     numPresentationMenuItems=val(n)
 		print "Number of menu items = ";newMenu.count()
 		for i = 1 to numPresentationMenuItems
