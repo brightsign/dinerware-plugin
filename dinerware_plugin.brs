@@ -44,12 +44,12 @@ Function dinerware_process_event(event as Object)
   if type(event) = "roDatagramEvent" then
     retval = ParseDinerwareUDP(event, m)
   else if (type(event) = "roUrlEvent") then
-    print "*****  Got roUrlEvent in Dinerware"  
+''    print "*****  Got roUrlEvent in Dinerware"  
     retval = HandleDinerwareXferEvent(event, m)
   else if type(event) = "roHttpEvent" then
-    print "roHttp event received in Dinerware processing"
+    'print "roHttp event received in Dinerware processing"
   else if type(event) = "roTimerEvent" then
-	print "Got Timer event"
+	'print "Got Timer event"
   end if
   return retval
 end Function
@@ -72,7 +72,7 @@ Function ParseDinerwareUDP(origMsg as Object, dw as object) as boolean
     r = CreateObject("roRegex", "^dinerware", "i")
     match=r.IsMatch(msg)
     if match then
-      print "*** dinerware ***"
+      'print "*** dinerware ***"
       retval = true
       ' split the string
       r2 = CreateObject("roRegex", "!", "i")
@@ -84,7 +84,7 @@ Function ParseDinerwareUDP(origMsg as Object, dw as object) as boolean
         return retval
       else 
         command=fields[1]
-        print "command: ";command
+        'print "command: ";command
       end if
 
       if command="getmenu" then
