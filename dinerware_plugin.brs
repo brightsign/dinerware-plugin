@@ -314,7 +314,7 @@ function getUserVar(uv as object, targetVar as string) as String
 
     if targetVar=invalid
         print "updateUserVar: targetVar is invalid"
-        return
+        return ""
     end if
 
     if uv[targetVar] <> invalid then
