@@ -54,12 +54,8 @@ Function dinerware_process_event(event as Object)
   return retval
 end Function
 
-function getUserVar(uv as object, targetVar as string) as String
-  s=uv[targetVar].currentValue$
-  'print "+++ "+targetVar+" is a "+type(s)+"and has len "+len(s)
-   's="0"
-  return s
-end function
+
+s
 
 Function ParseDinerwareUDP(origMsg as Object, dw as object) as boolean
 
@@ -293,3 +289,41 @@ Function newMenuItem(item as string, price as string, desc as string) as object
 
   return mi
 end Function
+
+ub updateUserVar(uv as object, targetVar as string, newValue as string)
+  if newValue=invalid
+      print "updateUserVar: new value for ";targetVar;" is invalid"
+      return
+  end if
+  if targetVar=invalid
+      print "updateUserVar: targetVar is invalid"
+      return
+  end if
+
+  if uv[targetVar] <> invalid then
+    if uv[targetVar].currentValue$ <> invalid then
+      'print "updating "+targetVar+": "+newValue
+      uv[targetVar].currentValue$=newValue
+    end if
+  else
+      print "updateUserVar: error trying to set non-existant user variable ";targetVar
+  end if
+end sub
+
+function getUserVar(uv as object, targetVar as string) as String
+
+    if targetVar=invalid
+        print "updateUserVar: targetVar is invalid"
+        return
+    end if
+
+    if uv[targetVar] <> invalid then
+      if uv[targetVar].currentValue$ <> invalid then
+          return uv[targetVar].currentValue$
+      end if
+    else
+        print "updateUserVar: error trying to set non-existant user variable ";targetVar
+    end if
+
+    return ""
+end function
