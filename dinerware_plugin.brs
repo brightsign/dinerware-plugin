@@ -270,12 +270,6 @@ Function parseAllMenuReply(menu as string,dw as object)
   return retVal
 end Function
 
-sub updateUserVar(uv as object, targetVar as string, newValue as string)
-	print "updating "+targetVar+": "+newValue
-	if (uv[targetVar] <> invalid) then
-		uv[targetVar].currentValue$=newValue
-	end if
-end sub
 
 
 Function newMenuItem(item as string, price as string, desc as string) as object
@@ -287,6 +281,14 @@ Function newMenuItem(item as string, price as string, desc as string) as object
 
   return mi
 end Function
+
+'sub updateUserVar(uv as object, targetVar as string, newValue as string)
+''  print "updating "+targetVar+": "+newValue
+''  if (uv[targetVar] <> invalid) then
+''    uv[targetVar].currentValue$=newValue
+''  end if
+'end sub
+
 
 sub updateUserVar(uv as object, targetVar as string, newValue as string)
   if newValue=invalid
