@@ -26,7 +26,6 @@
 	dw.timer.SetTime(-1, -1, -1, 30)
 	dw.timer.Start()
 
- '  dw.brainURL="192.168.1.164:84/VirtualClient"
   dw.brainURL=getUserVar(userVariables,"brain_url")
   dw.brainURL=dw.brainURL+":84/VirtualClient"
   print "brain at: ";dw.brainURL
@@ -95,7 +94,7 @@ Function ParseDinerwareUDP(origMsg as Object, dw as object) as boolean
       end if
 
       if command="getmenu" then
-        print "&&&&&&&&&&&&&&&&&&&&& getmenu &&&&&&&&&&&&&&&&&&&&&&&&&&"
+        'print "&&&&&&&&&&&&&&&&&&&&& getmenu &&&&&&&&&&&&&&&&&&&&&&&&&&"
         xfer = dwGetMenu(dw) 
         dw.xferObjects.push(xfer)
         retval=true
@@ -125,7 +124,6 @@ sub dwGetMenu(dw as object) as object
     stop
   end if
 
-
   dwReqData=CreateObject("roAssociativeArray")
   dwReqData["type"]="GetAllMenuItems"
   soapTransfer.SetUserData(dwReqData)
@@ -134,7 +132,7 @@ sub dwGetMenu(dw as object) as object
   x="<soapenv:Envelope xmlns:soapenv="+q+"http://schemas.xmlsoap.org/soap/envelope/"+q+" xmlns:tem="+q+"http://tempuri.org/"+q+">"
   x=x+"<soapenv:Header/><soapenv:Body><tem:GetAllMenuItems><!--Optional:--><tem:sSortOrder>?</tem:sSortOrder></tem:GetAllMenuItems></soapenv:Body></soapenv:Envelope>"
 
-  print "x=";x
+''  print "x=";x
 
   ok = soapTransfer.AsyncPostFromString(x)
   if not ok then
@@ -149,6 +147,8 @@ Function HandleDinerwareXferEvent(msg as object, dw as object) as boolean
   
   eventID = msg.GetSourceIdentity()
   eventCode = msg.GetResponseCode()
+
+  print "HandleDinerwareXferEvent ";msg
 
   found = false
   numXfers = dw.xferObjects.count()
@@ -233,8 +233,9 @@ Function parseAllMenuReply(menu as string,dw as object)
 			next 'q'
 		next 'x'
 
+    numPresentationMenuItems=getUserVar(userVariables,"numPresentationMenuItems")
 		print "Number of menu items = ";newMenu.count()
-		for i = 1 to 10 
+		for i = 1 to numPresentationMenuItems
 
 			b = newMenu[i-1]
 

@@ -1,0 +1,10 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:GetAllMenuItems>
+         <tem:sSortOrder>alpha</tem:sSortOrder>
+      </tem:GetAllMenuItems>
+   </soapenv:Body>
+</soapenv:Envelope>
+ 
+ 
