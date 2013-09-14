@@ -104,6 +104,10 @@ sub dwGetMenu(dw as object) as object
   print "dwGetMenu"
   print " - type of mp: ";type(dw.mp)
 
+  dw.brainURL=getUserVar(userVariables,"brain_url")
+  dw.brainURL=dw.brainURL+":84/VirtualClient"
+  print "brain at: ";dw.brainURL
+
   soapTransfer = CreateObject("roUrlTransfer")
   soapTransfer.SetMinimumTransferRate( 500, 1 )
   soapTransfer.SetPort( dw.mp )
