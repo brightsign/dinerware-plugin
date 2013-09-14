@@ -6,7 +6,7 @@
 
   dw = {}
   dw.name="dinerware"
-  dw.version=0.1
+  dw.version=1.0
   dw.uv = userVariables
   dw.bsp = bsp
   dw.ProcessEvent=dinerware_process_event
@@ -88,7 +88,6 @@ Function ParseDinerwareUDP(origMsg as Object, dw as object) as boolean
       end if
 
       if command="getmenu" then
-        'print "&&&&&&&&&&&&&&&&&&&&& getmenu &&&&&&&&&&&&&&&&&&&&&&&&&&"
         xfer = dwGetMenu(dw) 
         dw.xferObjects.push(xfer)
         retval=true
@@ -101,12 +100,12 @@ end Function
 
 sub dwGetMenu(dw as object) as object
 
-  print "dwGetMenu"
-  print " - type of mp: ";type(dw.mp)
+  'print "dwGetMenu"
+  'print " - type of mp: ";type(dw.mp)
 
   dw.brainURL=getUserVar(dw.uv,"brain_url")
   dw.brainURL=dw.brainURL+":84/VirtualClient"
-  print "brain at: ";dw.brainURL
+  'print "brain at: ";dw.brainURL
 
   soapTransfer = CreateObject("roUrlTransfer")
   soapTransfer.SetMinimumTransferRate( 500, 1 )
