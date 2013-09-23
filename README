@@ -1,0 +1,20 @@
+Dinerware Brightsign Digital Menu Board Plugin
+
+This plugin requires several key user variables for operation.  They are:
+
+brain_url - the IP address of the Dinerware brain host computer
+numPresentationMenuItems - the number of menu items in the presentation that will show on the board
+
+There must also be user variables to hold the menu item data, but these do not need any data entered since the system will fill them in automatically.  They are:
+
+ItemX_name
+ItemX_price
+Item1_desc
+
+where X is the number of the item (Item1_name, Item2_name, etc).
+
+The presentation then needs a timer that sends a UDP periodically to trigger the menu update.  The UDP payload must be the string "dinerware!getmenu" and should be often enough to refresh the screen when menu items are changed but not so often as to impose a load on the brain.
+
+This code will use the brain_url user variable and contact the Dinerware brain to get the entire menu.  Then the first X active items (where X is defined in the user variable numPresentationMenuItems) will be populated into the ItemX_name/price/desc user variables.   Using those variables as live text fields in a presentation allows instant update as those variables change.
+
+
