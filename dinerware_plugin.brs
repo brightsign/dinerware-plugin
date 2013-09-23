@@ -19,7 +19,13 @@
   dw.udpReceiver = CreateObject("roDatagramReceiver", dw.udpReceiverPort)
   dw.udpReceiver.SetPort(msgPort)
 
-  ' this will be repopulated on presentation timer events'
+	' Create a timer that updates the screen every 30 sec
+	dw.timer=CreateObject("roTimer")
+	dw.timer.SetPort(msgPort)
+	dw.timer.SetDate(-1, -1, -1)
+	dw.timer.SetTime(-1, -1, -1, 30)
+	dw.timer.Start()
+
   dw.brainURL=getUserVar(userVariables,"brain_url")
   dw.brainURL=dw.brainURL+":84/VirtualClient"
   print "brain at: ";dw.brainURL
