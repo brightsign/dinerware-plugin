@@ -17,4 +17,9 @@ The presentation then needs a timer that sends a UDP periodically to trigger the
 
 This code will use the brain_url user variable and contact the Dinerware brain to get the entire menu.  Then the first X active items (where X is defined in the user variable numPresentationMenuItems) will be populated into the ItemX_name/price/desc user variables.   Using those variables as live text fields in a presentation allows instant update as those variables change.
 
+An example presentation that uses this plugin is available on our FTP site at:  ftp://ftp.brightsignnetwork.com/download/dinerware/examples/dinerware-example-1.0.zip
+
+
+
+
 
