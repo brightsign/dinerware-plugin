@@ -11,7 +11,7 @@ First, you will need to create a number of User Variables in BrightAuthor. These
 The following User Variables need a <strong>Default Value</strong> along with the <strong>Name</strong>:
 <ul>
 <li><strong>brain_url</strong>: Enter the IP address of the Dinerware host computer.</li>
-<li><strong>numPresentationMenuItems<strong>: Enter the total number of menu items displayed in the presentation. This number includes all items, even if some of the items are only displayed at certain times.</li>
+<li><strong>numPresentationMenuItems</strong>: Enter the total number of menu items displayed in the presentation. This number includes all items, even if some of the items are only displayed at certain times.</li>
 </ul>
 
 The following User Variables only need to have a correct <strong>Name</strong>. You can enter any arbitrary value in the <strong>Default Value</strong> field because it will be automatically retrieved from the Dinerware server by the plugin. The “X” in each of these variables represents the menu item number: For example, “ItemX_name” represents “Item1_name”, “Item2_name”, “Item3_name”, and so on.
