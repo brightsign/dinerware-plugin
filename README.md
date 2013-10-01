@@ -53,6 +53,6 @@ The Dinerware plugin should regularly refresh the contents of the menu board (i.
 <li>Set the transition to <strong>Remain on current state</strong>.</li>
 <li>Select the Advanced tab while in the <strong>Timeout Event</strong> window.</li>
 <li>Click the <strong>Add Command</strong> button.</li>
-<li>Select the <strong>Send > UDP</strong command. In the <strong>Command Parameters</strong> field, enter “dinerware!getmenu”.</li>
+<li>Select the <strong>Send > UDP </strong> command. In the <strong>Command Parameters</strong> field, enter “dinerware!getmenu”.</li>
 </ol>
 <p>You can also set updates to occur upon other interactive events (UDP Input, Keyboard Input, Rectangular Touch, etc.). Simply add the desired event to the Live Text state and follow steps 4-7 above.</p>
