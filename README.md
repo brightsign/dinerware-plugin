@@ -2,7 +2,7 @@
 
 This tech note details how to integrate your digital menu board presentations in BrightAuthor with the Dinerware online database. For more information about creating and publishing presentations, please see the <a href="http://support.brightsign.biz/entries/314526-brightsign-user-guides-troubleshooting">BrightAuthor User Guide</a>.
 
-An example presentation that uses this plugin can be found <a href="ftp://ftp.brightsignnetwork.com/download/dinerware/examples/dinerware-example-1.0.zip">here</a>.
+An example presentation that uses this plugin can be found here: "ftp://ftp.brightsignnetwork.com/download/dinerware/examples/dinerware-example-1.0.zip"
 
 ###Creating a Set of User Variables
 
