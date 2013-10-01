@@ -1,11 +1,11 @@
-Overview
-==============
+##Overview
+
 This tech note details how to integrate your digital menu board presentations in BrightAuthor with the Dinerware online database. For more information about creating and publishing presentations, please see the <a href="http://support.brightsign.biz/entries/314526-brightsign-user-guides-troubleshooting">BrightAuthor User Guide</a>.
 
 An example presentation that uses this plugin can be found <a href="ftp://ftp.brightsignnetwork.com/download/dinerware/examples/dinerware-example-1.0.zip">here</a>.
 
-Creating a Set of User Variables
--------------------------------------------
+###Creating a Set of User Variables
+
 First, you will need to create a number of User Variables in BrightAuthor. These variables will allow you to access the Dinerware database and display menu items, prices, and descriptions. To create User Variables in a presentation, navigate to <strong>File > Presentation Properties > Variables</strong> and click the <strong>Add Variable</strong> button.
 
 The following User Variables need a <strong>Default Value</strong> along with the <strong>Name</strong>:
@@ -21,8 +21,8 @@ The following User Variables only need to have a correct <strong>Name</strong>. 
 <li><strong>ItemX_desc</strong>: A description of the menu item.</li>
 </ul>
 
-Adding the Dinerware Plugin
--------------------------------------
+###Adding the Dinerware Plugin
+
 Next, you need to add the Dinerware plugin to your presentation:
 <ol>
 <li>Navigate to <strong>File > Presentation Properties > Autorun</strong>.</li>
@@ -31,8 +31,8 @@ Next, you need to add the Dinerware plugin to your presentation:
 <li>Click the <strong>Browse</strong> button. Locate and select the <em>dinerware_plugin.brs/em> file.</li>
 </ol>
 
-Adding Items to your Menu Board
---------------------------------------------
+###Adding Items to your Menu Board
+
 You will need to use a Live Text state to display the Dinerware menu items on your digital menu board: 
 <ol>
 <li>Click the <strong>interactive</strong> option to the right of the playlist to make the presentation interactive.</li>
@@ -43,8 +43,8 @@ You will need to use a Live Text state to display the Dinerware menu items on yo
 <li>Click the <strong>Add Item</strong> button to create text boxes for additional items, prices and descriptions.</li>
 </ol>
 
-Setting a Refresh Timer
--------------------------------
+###Setting a Refresh Timer
+
 The Dinerware plugin should regularly refresh the contents of the menu board (i.e. the User Variables). The easiest way to accomplish this is to add a Send UDP command to a Timer event:
 <ol>
 <li>Select the <strong>events</strong> tab in the <strong>Media Library</strong> section.</li>
